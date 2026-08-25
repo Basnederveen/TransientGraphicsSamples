@@ -2,13 +2,13 @@
 
 Companion code for the blog series on building and rendering transient bodies with Inventor's
 `TransientBRep` / `TransientGeometry` / client-graphics APIs, published at
-https://www.basautomation.nl/blog. Every code block in the posts is lifted from this project.
+https://basautomationservices.com/blog. Every code block in the posts is lifted from this project.
 The repository grows with the series: each post's code is added when the post goes live.
 
 | Post | File |
 |---|---|
-| [Constructing a transient beam in Inventor](https://www.basautomation.nl/blog/constructing-a-transient-beam/) | (introduction, no code) |
-| [The TransientBRep construction tree in Inventor](https://www.basautomation.nl/blog/inventor-transientbrep-construction-tree/) | `InventorGeometry.cs`, `Post02_ConstructionTree.cs` |
+| [Constructing a transient beam in Inventor](https://basautomationservices.com/blog/constructing-a-transient-beam/) | (introduction, no code) |
+| [The TransientBRep construction tree in Inventor](https://basautomationservices.com/blog/inventor-transientbrep-construction-tree/) | `InventorGeometry.cs`, `Post02_ConstructionTree.cs` |
 
 ## Building
 
