@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <InventorVersion Condition="'$(InventorVersion)' == ''">2025</InventorVersion>
+    <RootNamespace>TransientGraphics.Samples</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BasAutomation.Geometry" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Autodesk.Inventor.Interop">
+      <HintPath>C:\Program Files\Autodesk\Inventor $(InventorVersion)\Bin\Public Assemblies\Autodesk.Inventor.Interop.dll</HintPath>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
