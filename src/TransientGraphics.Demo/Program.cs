@@ -73,7 +73,7 @@ public static class Program
         switch (post)
         {
             case "1":
-                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 or 3.");
+                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2, 3 or 4.");
             case "2":
                 graphics.AddBody(Post02_ConstructionTree.BuildSheet(app));
                 break;
@@ -90,8 +90,11 @@ public static class Program
                 graphics.AddBody(tb.CreateSolidBlock(box));
                 break;
             }
+            case "4":
+                graphics.AddBody(Post04_CapFaces.BuildHollowCap(app));
+                break;
             default:
-                throw new ArgumentException($"Unknown post '{post}'. Use 2 or 3, or clear.");
+                throw new ArgumentException($"Unknown post '{post}'. Use 2, 3 or 4, or clear.");
         }
     }
 

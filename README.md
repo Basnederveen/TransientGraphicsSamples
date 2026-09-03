@@ -10,6 +10,7 @@ The repository grows with the series: each post's code is added when the post go
 | [Constructing a transient beam in Inventor](https://basautomationservices.com/blog/constructing-a-transient-beam/) | (introduction, no code) |
 | [The TransientBRep construction tree in Inventor](https://basautomationservices.com/blog/inventor-transientbrep-construction-tree/) | `InventorGeometry.cs`, `Post02_ConstructionTree.cs` |
 | [Getting a transient body on screen in Inventor](https://basautomationservices.com/blog/inventor-transient-body-on-screen/) | `Post03_BaseGraphics.cs`, `TransientGraphics.Demo/` |
+| [Cap faces for a transient beam](https://basautomationservices.com/blog/transient-beam-cap-faces/) | `Profiles.cs`, `Post04_CapFaces.cs` |
 
 Two projects:
 
