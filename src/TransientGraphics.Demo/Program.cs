@@ -1,6 +1,8 @@
 using Inventor;
 using BasAutomation.Geometry;
+using BasAutomation.Geometry.Curves;
 using TransientGraphics.Samples;
+using Profiles = TransientGraphics.Samples.Profiles;
 
 namespace TransientGraphics.Demo;
 
@@ -69,11 +71,16 @@ public static class Program
     {
         var tg = app.TransientGeometry;
         var tb = app.TransientBRep;
+        var y  = Vector3D.YAxis;
+
+        IReadOnlyList<ICurve3D> rhs      = Profiles.RoundedRectangle(10, 5, 0.6);
+        IReadOnlyList<ICurve3D> rhsInner = Profiles.RoundedRectangle(9, 4, 0.15);
+        IReadOnlyList<ICurve3D> ipe      = Profiles.IBeam(12, 6.4, 0.44, 0.63, 0.7);
 
         switch (post)
         {
             case "1":
-                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2, 3 or 4.");
+                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 5.");
             case "2":
                 graphics.AddBody(Post02_ConstructionTree.BuildSheet(app));
                 break;
@@ -93,8 +100,13 @@ public static class Program
             case "4":
                 graphics.AddBody(Post04_CapFaces.BuildHollowCap(app));
                 break;
+            case "5":
+                graphics.AddBody(Post05_StraightBeam.Build(app, ipe, [], new Point3D(0, 0, 0), y, 60));
+                graphics.AddBody(Post05_StraightBeam.Build(app, rhs, [rhsInner], new Point3D(16, 0, 0), y, 60));
+                graphics.AddBody(Post05_StraightBeam.Build(app, Profiles.Circle(3.5), [Profiles.Circle(3)], new Point3D(30, 0, 0), y, 60));
+                break;
             default:
-                throw new ArgumentException($"Unknown post '{post}'. Use 2, 3 or 4, or clear.");
+                throw new ArgumentException($"Unknown post '{post}'. Use 2-5, or clear.");
         }
     }
 
