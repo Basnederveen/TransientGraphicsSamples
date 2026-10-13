@@ -80,7 +80,7 @@ public static class Program
         switch (post)
         {
             case "1":
-                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 5.");
+                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 6.");
             case "2":
                 graphics.AddBody(Post02_ConstructionTree.BuildSheet(app));
                 break;
@@ -105,8 +105,24 @@ public static class Program
                 graphics.AddBody(Post05_StraightBeam.Build(app, rhs, [rhsInner], new Point3D(16, 0, 0), y, 60));
                 graphics.AddBody(Post05_StraightBeam.Build(app, Profiles.Circle(3.5), [Profiles.Circle(3)], new Point3D(30, 0, 0), y, 60));
                 break;
+            case "6":
+            {
+                // Two members meeting in a mitred corner. FrameAt rolls the section differently for
+                // a beam along +X than for one along +Y, so the second member takes it a quarter
+                // turn round: both then stand 5 cm high and the two cut faces coincide.
+                IReadOnlyList<ICurve3D> turned      = Profiles.RoundedRectangle(5, 10, 0.6);
+                IReadOnlyList<ICurve3D> turnedInner = Profiles.RoundedRectangle(4, 9, 0.15);
+
+                var corner = new Point3D(0, 50, 0);
+                var mitre  = new Plane3D(corner, new Vector3D(1, 1, 0));
+                graphics.AddBody(Post06_AngledEnds.Build(app, rhs, [rhsInner], new Point3D(0, 0, 0), corner,
+                    new Plane3D(new Point3D(0, 0, 0), y), mitre));
+                graphics.AddBody(Post06_AngledEnds.Build(app, turned, [turnedInner], corner, new Point3D(45, 50, 0),
+                    mitre, new Plane3D(new Point3D(45, 50, 0), Vector3D.XAxis)));
+                break;
+            }
             default:
-                throw new ArgumentException($"Unknown post '{post}'. Use 2-5, or clear.");
+                throw new ArgumentException($"Unknown post '{post}'. Use 2-6, or clear.");
         }
     }
 

@@ -12,6 +12,7 @@ The repository grows with the series: each post's code is added when the post go
 | [Getting a transient body on screen in Inventor](https://basautomationservices.com/blog/inventor-transient-body-on-screen/) | `Post03_BaseGraphics.cs`, `TransientGraphics.Demo/` |
 | [Cap faces for a transient beam](https://basautomationservices.com/blog/transient-beam-cap-faces/) | `Profiles.cs`, `Post04_CapFaces.cs` |
 | [Side faces for a transient beam](https://basautomationservices.com/blog/transient-beam-side-faces/) | `Post05_StraightBeam.cs` |
+| [Clean angled ends on a transient beam](https://basautomationservices.com/blog/transient-beam-angled-ends/) | `Post06_AngledEnds.cs` |
 
 Two projects:
 
